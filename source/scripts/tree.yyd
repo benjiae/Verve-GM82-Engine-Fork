@@ -80,6 +80,7 @@
 	|player_flip
 	|player_set_mask
 	|player_check_crush
+	|player_try_ad
 +Music
 	|sound_init
 	|sound_balance

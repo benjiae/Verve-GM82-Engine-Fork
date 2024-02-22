@@ -109,10 +109,14 @@ applies_to=self
 /// Actions
 
 if !frozen {
-    if input_check_pressed(key_jump) {
+    if input_check_pressed(key_jump) and !input_check(key_1f) {
         player_try_jump();
     }
-    if input_check_released(key_jump) {
+    if input_check_released(key_jump) and !input_check(key_1f) {
+        player_release_jump();
+    }
+    if input_check_pressed(key_1f) && !input_check(key_jump) && global.one_frame_assist {
+        player_try_jump();
         player_release_jump();
     }
     if input_check_pressed(key_shoot) {
@@ -120,6 +124,9 @@ if !frozen {
     }
     if input_check_pressed(key_suicide) {
         player_kill();
+    }
+    if keyboard_check_pressed(ord('A') or ord('D')) && global.one_frame_assist {
+        player_try_ad();
     }
 }
 /*"/*'/**//* YYD ACTION

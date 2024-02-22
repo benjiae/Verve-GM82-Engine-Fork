@@ -26,6 +26,8 @@ input_define(key_right,   "Right Button",   vk_right, true);
 input_define(key_up,      "Up Button",      vk_up,    true);
 input_define(key_down,    "Down Button",    vk_down,  true);
 input_define(key_jump,    "Jump Button",    vk_shift, true);
+if (global.one_frame_assist) {  // this line sucks but it works
+input_define(key_1f,      "Low Jump Button" ,vk_up,  true); }
 input_define(key_shoot,   "Shoot Button",   ord("Z"), true);
 input_define(key_restart, "Restart Button", ord("R"), true);
 input_define(key_skip,    "Skip Button",    ord("S"), true);

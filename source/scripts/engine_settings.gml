@@ -44,6 +44,10 @@ global.debug_key = vk_control;
     // Useful in e.g. very cramped needle where running into a warp can easily result in death.
     global.clear_input_on_warp = false;
     global.clear_input_on_restart = false;
+    // Adds an assist for 1-frame movement (vertical & horizontal)
+    global.one_frame_assist = true;
+    // How many pixels does the horizontal assist move (depends on global.one_frame_assist).
+    global.ad_move = 3;
 
 // Difficulties
     global.difficulty_count = 4;
