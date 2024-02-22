@@ -24,6 +24,9 @@ on_floor = false;
 vine_direction = false;
 feet_y_prev = 0;
 
+vine_air_jumps = 1;
+first_action = 1;
+
 if global.save_autosave {
     save_save();
     global.save_autosave = false;
@@ -135,7 +138,6 @@ action_id=603
 applies_to=self
 */
 /// Vines
-
 if vine_direction != 0 {
     if vine_direction == 1 {
         x_scale = -1;
@@ -143,11 +145,30 @@ if vine_direction != 0 {
     else {
         x_scale = 1;
     }
-
+    if first_action == 1 {
+        if air_jumps == 1 {
+            vine_air_jumps = 1
+        } else if air_jumps == 0 {
+            vine_air_jumps = 0
+        }
+        first_action = 0
+    }
     vspeed = 2 * global.grav;
 
-    if (vine_direction == -1 && input_check_pressed(key_right)) || (vine_direction == 1 && input_check_pressed(key_left)) {
-        if input_check(key_jump) {
+    if (vine_direction == -1 && input_check_pressed(key_right)) || (vine_direction == 1 && input_check_pressed(key_left)) || (input_check_pressed(key_jump) or input_check_pressed(key_1f)) && global.maker_vines{
+        if input_check_pressed(key_jump) && global.maker_vines {
+            if vine_air_jumps == 1 {air_jumps = 1} else if vine_air_jumps == 0 {air_jumps = 0}
+            hspeed = 15;
+            vspeed = -9 * global.grav;
+            sound_play("player_wall_jump");
+        }
+        else if input_check_pressed(key_1f) && global.maker_vines {
+            if vine_air_jumps == 1 {air_jumps = 1} else if vine_air_jumps == 0 {air_jumps = 0}
+            hspeed = 15;
+            vspeed = -9 * global.grav * jump_release_multiplier;
+            sound_play("player_wall_jump");
+        }
+        else if input_check(key_jump) {
             hspeed = 15;
             vspeed = -9 * global.grav;
             sound_play("player_wall_jump");
@@ -161,6 +182,7 @@ if vine_direction != 0 {
         }
 
         vine_direction = 0;
+        first_action = 1
     }
 }
 /*"/*'/**//* YYD ACTION

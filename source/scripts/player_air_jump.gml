@@ -10,4 +10,7 @@ else {
     air_jumps = max(air_jumps, 0);
 }
 
-sound_play("player_air_jump");
+if (place_meeting(x-1,y,VineLeft) || place_meeting(x+1,y,VineRight)) && global.maker_vines {
+} else {
+    sound_play("player_air_jump");
+}

@@ -48,6 +48,8 @@ global.debug_key = vk_control;
     global.one_frame_assist = true;
     // How many pixels does the horizontal assist move (depends on global.one_frame_assist).
     global.ad_move = 3;
+    // I Wanna Maker Vines.
+    global.maker_vines = true;
 
 // Difficulties
     global.difficulty_count = 4;
