@@ -50,6 +50,8 @@ global.debug_key = vk_control;
     global.ad_move = 3;
     // I Wanna Maker Vines.
     global.maker_vines = true;
+    // Makes the bow turn blue if the player doesn't have double jumps
+    global.celeste_bow = true;
 
 // Difficulties
     global.difficulty_count = 4;

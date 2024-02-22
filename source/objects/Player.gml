@@ -459,6 +459,8 @@ if global.debug_show_mask {
 draw_sprite_ext(_draw_sprite, image_index, _draw_x, _draw_y, x_scale, _draw_y_scale, image_angle, _draw_color, _draw_alpha);
 
 // Draw the bow
-if has_bow {
-    draw_sprite_ext(sprPlayerBow, image_index, _draw_x, _draw_y, x_scale, image_yscale * global.grav, image_angle, image_blend, image_alpha);
+if has_bow && air_jumps >= 1 {
+    draw_sprite_ext(sprPlayerBow, 0, _draw_x, _draw_y, x_scale, image_yscale * global.grav, image_angle, image_blend, image_alpha);
+} else if (has_bow && air_jumps = 0 && global.celeste_bow) {
+    draw_sprite_ext(sprPlayerBow, 1, _draw_x, _draw_y, x_scale, image_yscale * global.grav, image_angle, image_blend, image_alpha);
 }
