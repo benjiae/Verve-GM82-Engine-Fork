@@ -1,10 +1,8 @@
-#### Stuff this fork adds: 
+#### Stuff this fork adds:
 - 1f Assists (a low jump defaulted to the up key, and left/right movement defaulted to A/D)
 - An attempt at IWM Vines
-- The Kid's bow changes color when you no longer have a double jump
-
-\
-^ everything here can be disabled on the engine_settings script
+- Celeste bow
+- A (not animated) dialogue system
 
 ---- 
 Original README:
