@@ -118,7 +118,7 @@ if !frozen {
     if input_check_released(key_jump) and !input_check(key_1f) {
         player_release_jump();
     }
-    if input_check_pressed(key_1f) && !input_check(key_jump) && global.one_frame_assist {
+    if input_check_pressed(key_1f) && !input_check(key_jump) && global.one_frame_assist && !place_meeting(x,y,Dialogue_Sign){
         player_try_jump();
         player_release_jump();
     }

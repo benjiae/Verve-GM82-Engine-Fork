@@ -107,3 +107,7 @@
 +Misc
 	|sprEmpty
 	|spr1x1
++Dialogues
+	|sprDialogueBase
+	|sprKidHead
+	|sprDiagSign
