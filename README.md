@@ -3,6 +3,7 @@
 - An attempt at IWM Vines
 - Celeste bow
 - A (not animated) dialogue system
+- Dotkid
 
 ---- 
 Original README:

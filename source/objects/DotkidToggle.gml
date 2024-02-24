@@ -19,6 +19,7 @@ if place_meeting(x,y,Player) && touched = 0 {
     global.dotkid = !global.dotkid
     touched = 1
     t = 0
+    if (global.dotkid = 0) Player.y -= 8
 } else {
     if (t < 50) t+= 1
     if t = 50 && touched = 1 {

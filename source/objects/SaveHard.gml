@@ -40,6 +40,10 @@ if input_check_pressed(key_shoot) {
         event_user(0);
     }
 }
+
+if global.dotkid = 1 && place_meeting(x,y,Player) {
+    event_user(0);
+}
 #define Other_7
 /*"/*'/**//* YYD ACTION
 lib_id=1

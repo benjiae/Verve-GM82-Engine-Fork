@@ -1,5 +1,11 @@
 ///save_save([impossible=false])
+var _player_y;
 
+if global.dotkid {
+    _player_y = Player.y - 8
+} else {
+    _player_y = Player.y
+}
 // Saves the game.
 // The argument allows saving even on impossible.
 
@@ -20,7 +26,7 @@ save_set("saved", true);
 
 save_set("room", room);
 save_set("x", Player.x);
-save_set("y", Player.y);
+save_set("y", _player_y);
 save_set("x_scale", Player.x_scale);
 save_set("grav", global.grav);
 

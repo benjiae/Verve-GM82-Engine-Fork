@@ -23,7 +23,8 @@ has_bow = (save_get("difficulty") == 0);
 on_floor = false;
 vine_direction = false;
 feet_y_prev = 0;
-global.dotkid = 0
+dotkid_circle = 0;
+global.dotkid = 0;
 
 vine_air_jumps = 1;
 first_action = 1;
@@ -479,4 +480,9 @@ if has_bow && air_jumps >= 1 {
     draw_sprite_ext(sprPlayerBow, 0, _draw_x, _draw_y, x_scale, image_yscale * global.grav, image_angle, image_blend, image_alpha);
 } else if (has_bow && air_jumps = 0 && global.celeste_bow) {
     draw_sprite_ext(sprPlayerBow, 1, _draw_x, _draw_y, x_scale, image_yscale * global.grav, image_angle, image_blend, image_alpha);
+}
+
+if Player.dotkid_circle {
+    draw_set_color(c_red)
+    draw_circle(x, y, 16, 24)
 }
