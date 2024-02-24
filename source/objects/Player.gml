@@ -23,6 +23,7 @@ has_bow = (save_get("difficulty") == 0);
 on_floor = false;
 vine_direction = false;
 feet_y_prev = 0;
+global.dotkid = 0
 
 vine_air_jumps = 1;
 first_action = 1;
@@ -283,6 +284,18 @@ if !place_free(x + hspeed, y + vspeed) {
 }
 
 vspeed -= gravity;
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///Gimmicks
+
+if global.dotkid = 1 {
+    mask_index = spr2x2;
+} else {
+    player_set_mask();
+}
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -385,30 +398,33 @@ action_id=603
 applies_to=self
 */
 /// Player animation
-
-if on_floor {
-    if h_input != 0 {
-        sprite_index = sprPlayerRun;
+if !global.dotkid {
+    if on_floor {
+        if h_input != 0 {
+            sprite_index = sprPlayerRun;
+            image_speed = 0.5;
+        }
+        else {
+            sprite_index = sprPlayerIdle;
+            image_speed = 0.2;
+        }
+    }
+    else if vine_direction != 0 {
+        sprite_index = sprPlayerSlide;
         image_speed = 0.5;
     }
     else {
-        sprite_index = sprPlayerIdle;
-        image_speed = 0.2;
+        if vspeed * global.grav < 0 {
+            sprite_index = sprPlayerJump;
+            image_speed = 0.5;
+        }
+        else {
+            sprite_index = sprPlayerFall;
+            image_speed = 0.5;
+        }
     }
-}
-else if vine_direction != 0 {
-    sprite_index = sprPlayerSlide;
-    image_speed = 0.5;
-}
-else {
-    if vspeed * global.grav < 0 {
-        sprite_index = sprPlayerJump;
-        image_speed = 0.5;
-    }
-    else {
-        sprite_index = sprPlayerFall;
-        image_speed = 0.5;
-    }
+} else {
+    sprite_index = spr2x2;
 }
 #define Other_4
 /*"/*'/**//* YYD ACTION

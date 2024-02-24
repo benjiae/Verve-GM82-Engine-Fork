@@ -58,6 +58,8 @@
 		|IceBlock
 		|ConveyorLeft
 		|ConveyorRight
+	+things
+		|DotkidToggle
 	|PlatformTouch
 	|VineLeft
 	|VineRight

@@ -32,7 +32,8 @@ if place_meeting(x, y, Player) {
     if input_check_pressed(key_up) {
         Dialogue.drawing    = 1;
         Dialogue.box        = 0;
-        Dialogue.max_boxes  = 1;
+        Dialogue.max_boxes  = 0;
+        if (text != "") Dialogue.max_boxes  = 1;
         running = 1
     }
     if running = 1 {
