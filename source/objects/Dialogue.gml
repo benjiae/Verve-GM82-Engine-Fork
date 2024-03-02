@@ -6,13 +6,12 @@ applies_to=self
 */
 drawing = 0;
 
-text = "";
-portrait = "";
-name = "";
+message[0] = "please change";
+portrait[0] = sprKidHead;
+name[0] = "please change";
 
-
-box = 0; // The box it starts on
-max_boxes = 0; // The box it's supposed to end on
+i = 0
+max_boxes = 0
 
 first = 1;
 
@@ -36,15 +35,15 @@ if drawing = 1 {
     draw_set_color(text_color);
     draw_set_halign(fa_left)
 
-    if box <= max_boxes {
-        draw_text(view_hborder[0] + x_offset[0], view_vborder + y_offset[0], name); // Name
-        draw_text(view_hborder[0] + x_offset[1], view_vborder + y_offset[1], text); // Text
-        draw_sprite(portrait, 0, view_hborder[0] + 31, view_vborder + 472); // Portrait
-        if (input_check_pressed(key_jump)) box += 1; // Increase the textbox amount when the player jumps.
+    draw_text(view_hborder[0] + x_offset[0], view_vborder + y_offset[0], name[i]); // Name
+    draw_text(view_hborder[0] + x_offset[1], view_vborder + y_offset[1], message[i]); // Text
+    draw_sprite(portrait[i], 0, view_hborder[0] + 31, view_vborder + 472); // Portrait
+    if (input_check_pressed(key_jump)) i += 1; // Increase the textbox amount when the player jumps.
 
-    } else if box > max_boxes {
-        Player.frozen = 0;
-        drawing = 0;
-        box = 0;
+    if i > max_boxes {
+        drawing = 0
     }
+} else {
+    Player.frozen = 0
+    i = 0
 }

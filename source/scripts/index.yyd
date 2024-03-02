@@ -110,3 +110,4 @@ camera_set_enabled
 player_try_ad
 
 
+dialogue_write

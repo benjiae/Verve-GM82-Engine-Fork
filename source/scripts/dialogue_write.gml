@@ -1,10 +1,9 @@
-///dialogue_write(name,text,portrait);
-
+///dialogue_write(name, portrait, message, number)
 name = argument0;
-text = argument1;
-portrait = argument2;
+portrait = argument1;
+message = argument2;
+i = argument3;
 
-Dialogue.drawing = 1;
-Dialogue.name = string(name);
-Dialogue.text = string(text);
-Dialogue.head = portrait;
+Dialogue.name[i] = name
+Dialogue.portrait[i] = portrait
+Dialogue.message[i] = message
