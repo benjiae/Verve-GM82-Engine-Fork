@@ -16,3 +16,5 @@ save_set_persistent("time", 0);
 save_set_persistent("deaths", 0);
 save_set_persistent("room", global.first_room);
 save_set_persistent("grav", 1);
+global.dotkid = 0 // <- change this to make the player start as dotkid on the first save
+save_set_persistent("dotkid", global.dotkid)

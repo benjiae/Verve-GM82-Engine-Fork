@@ -24,7 +24,6 @@ on_floor = false;
 vine_direction = false;
 feet_y_prev = 0;
 dotkid_circle = 0;
-global.dotkid = 0;
 
 vine_air_jumps = 1;
 first_action = 1;

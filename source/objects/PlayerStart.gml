@@ -7,5 +7,9 @@ applies_to=self
 ///Create the player only if they don't already exist.
 
 if !instance_exists(Player) {
-    instance_create(x + 17, y + 23, Player);
+    if !global.dotkid {
+        instance_create(x + 17, y + 23, Player);
+    } else {
+        instance_create(x + 17, y, Player);
+    }
 }

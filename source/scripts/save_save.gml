@@ -1,11 +1,8 @@
 ///save_save([impossible=false])
 var _player_y;
 
-if global.dotkid {
-    _player_y = Player.y - 8
-} else {
-    _player_y = Player.y
-}
+_player_y = Player.y
+
 // Saves the game.
 // The argument allows saving even on impossible.
 
@@ -29,6 +26,7 @@ save_set("x", Player.x);
 save_set("y", _player_y);
 save_set("x_scale", Player.x_scale);
 save_set("grav", global.grav);
+save_set("dotkid", global.dotkid);
 
 ds_map_copy(global.save_persistent_map, global.save_map);
 
