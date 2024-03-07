@@ -1,4 +1,4 @@
-//gm82 fields begin
-text="Hi! I'm a sign!"
-text2="You sure do look like one"
-//gm82 fields end
+instance_create(0, 0, Dialogue)
+dialogue_write("Sign", sprDiagSign, "Hi! i'm an example sign!", 0)
+dialogue_write("Kid", sprKidHead, "You sure do look like one", 1)
+Dialogue.max_boxes = 1

@@ -12,6 +12,8 @@ grav = 0.4;
 max_air_jumps = 1;
 max_vspeed = 9;
 run_speed = 3;
+dash = 1;
+dashable = 1;
 
 // State
 frozen = false;
@@ -119,10 +121,12 @@ if !frozen {
     if input_check_released(key_jump) and !input_check(key_1f) {
         player_release_jump();
     }
-    if input_check_pressed(key_1f) && !input_check(key_jump) && global.one_frame_assist && !place_meeting(x,y,Dialogue_Sign){
+
+    if input_check_pressed(key_1f) && !input_check(key_jump) && global.one_frame_assist && !place_meeting(x,y,Dialogue_Trigger){
         player_try_jump();
         player_release_jump();
     }
+
     if input_check_pressed(key_shoot) {
         player_shoot();
     }
